@@ -14,6 +14,6 @@ export class Usuario {
     @Column()
     correoElectronico:string = ''
     @Column()
-    telefono:string = ''
+    telefono:string = '' 
 
 }
