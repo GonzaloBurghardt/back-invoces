@@ -10,7 +10,7 @@ export const AppDataSource = new DataSource({
     password: "postgres",
     database: "typeorm",
     synchronize: true,
-    logging: false,
+    logging: true,
     entities: [__dirname__+'/entities/*.ts'],
     migrations: [],
     subscribers: [],
