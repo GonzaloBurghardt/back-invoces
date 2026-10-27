@@ -5,13 +5,13 @@ import { User } from "./entities/User"
 export const AppDataSource = new DataSource({
     type: "postgres",
     host: "localhost",
-    port: 5432,
-    username: "root",
-    password: "password",
+    port: 5433,
+    username: "postgres",
+    password: "postgres",
     database: "typeorm",
     synchronize: true,
     logging: false,
-    entities: [User],
+    entities: [__dirname__+'/entities/*.ts'],
     migrations: [],
     subscribers: [],
 })
