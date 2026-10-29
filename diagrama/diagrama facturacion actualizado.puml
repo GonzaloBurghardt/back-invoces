@@ -1,0 +1,111 @@
+@startuml factura
+
+class AgenteComercial {
+    -id: long 
+    +nombre: string
+
+
+
+
+}
+class Producto{
+    -stock:decimal
+
+
+}
+class Transaccion{
+    -id:long
+    -fecha:date
+    -unidadDeMedida:UnidadDeMedida
+    -precioDeUnidad:decimal
+    -unidad:number
+    -cantidad:decimal
+    -precioPorUnidadDeMedida:decimal
+    -lote:string
+    -iva:decimal    
+    
+   
+}
+
+class Venta extends Transaccion{
+    
+
+}
+
+class Compra extends Transaccion{
+    
+}
+
+class Cliente extends AgenteComercial{
+
+}
+
+class Proveedor extends AgenteComercial{
+
+}
+
+
+class Documento{
+-nombreEmpresa:string
+-nombreCliente:string
+-logoEmpresa:img
+-fecha:date
+-datos:Transaccion
+-nifEmpresa:string
+-id:long
+
+}
+
+class Local{
+    -calle:string
+    -numero:int  
+}
+
+class Almacen{
+    -id:string
+    -nombre:string
+    -ubicacion:string
+
+}
+
+class Distribucion{
+    -id:string
+    -lote:string
+    -cantidad:number
+}
+
+
+note top of Documento: "factura, presupuesto"
+class Factura extends Documento{
+
+}
+
+class Albaran extends Documento{
+
+}
+
+class Presupuesto extends Documento{
+
+}
+
+enum iva{ 
+     
+}
+
+enum UnidadDeMedida{
+    unidad
+    kilogramo
+    metro
+    litro
+    metroCuadrado
+}
+
+AgenteComercial "1"--"*" Transaccion
+Transaccion "*" -- "1" Producto
+Documento *-- "*" Transaccion
+Factura "0,1" -- "1,*" Albaran 
+Cliente *--"*" Local
+Distribucion "*" -- "1" Producto
+Almacen "1" -- "*" Distribucion
+
+@enduml
