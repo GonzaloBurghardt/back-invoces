@@ -15,6 +15,4 @@ export class User {
     correoElectronico:string = ''
     @Column()
     telefono:string = '' 
-    @Column()
-    patata:string = '' 
 }
