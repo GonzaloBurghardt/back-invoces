@@ -1,11 +1,14 @@
 import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
 
 @Entity()
-export class TablaPrueba {
+export class Almacen {
 
     @PrimaryGeneratedColumn()
-    id: number = 0
+    id:string = ''
     @Column()
-    dni:string = ''
+    nombre:string = ''
+    @Column()
+    ubicacion:string = ''
+
 
 }
