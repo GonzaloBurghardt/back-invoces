@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm"
+import { Transaccion } from "./Transaccion"
 
 @Entity()
 export class Producto {
@@ -7,6 +8,7 @@ export class Producto {
     id:string = ''
     @Column({type: "double"})
     cantidad:number = 0
-
+    @OneToMany(() => Transaccion, transaccion => transaccion.producto)
+    transacciones!: Transaccion[]
 
 }

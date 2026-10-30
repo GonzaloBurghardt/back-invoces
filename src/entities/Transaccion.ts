@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, TableInheritance } from "typeorm"
-
+import { Entity, PrimaryGeneratedColumn, Column, TableInheritance,ManyToOne} from "typeorm"
+import { AgenteComercial } from "./AgenteComercial"
+import { Producto } from "./Producto"
 @Entity()
 @TableInheritance({ column: { type: "varchar", name: "type" } })
 export class Transaccion {
@@ -22,4 +23,10 @@ export class Transaccion {
     lote:string = ''
     @Column()
     iva:string = ''//TOTO CAMBIAR ENUM
+    @ManyToOne(() => AgenteComercial, agente => agente.transacciones)
+    agenteComercial!: AgenteComercial
+    
+    @ManyToOne(() => Producto, producto => producto.transacciones)
+    producto!: Producto
 }
+
