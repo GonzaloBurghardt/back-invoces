@@ -1,10 +1,10 @@
 import { AppDataSource } from "../data-source"
 import { NextFunction, Request, Response } from "express"
-import { User } from "../entities/AgenteComercial"
+//import { User } from "../entities/AgenteComercial"
 
 export class UserController {
 
-    private userRepository = AppDataSource.getRepository(User)
+  /*  private userRepository = AppDataSource.getRepository(User)
 
     async all(request: Request, response: Response, next: NextFunction) {
         return this.userRepository.find()
@@ -49,5 +49,5 @@ export class UserController {
 
         return "user has been removed"
     }
-
+*/
 }

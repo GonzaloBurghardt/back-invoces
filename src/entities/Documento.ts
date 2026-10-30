@@ -17,8 +17,6 @@ export class Documento {
     fecha:Date = new Date
     @Column()
     nifEmpresa:string = ''
-    @Column()
-    datos:Transaccion = new Transaccion 
     @OneToMany(() => Transaccion, (transaccion => transaccion.documento))
     transacciones!:Transaccion[]
 

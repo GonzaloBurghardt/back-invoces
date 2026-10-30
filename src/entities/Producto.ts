@@ -7,7 +7,7 @@ export class Producto {
 
     @PrimaryGeneratedColumn()
     id:string = ''
-    @Column({type: "double"})
+    @Column({type: "float"})
     cantidad:number = 0
     @OneToMany(() => Transaccion, transaccion => transaccion.producto)
     transacciones!: Transaccion[]

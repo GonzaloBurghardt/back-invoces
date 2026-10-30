@@ -17,13 +17,13 @@ export class Transaccion {
     enum: UnidadDeMedida,
     default: UnidadDeMedida.UNIDAD})
     unidadDeMedida!: UnidadDeMedida;
-    @Column({ type: 'double' })
+    @Column({ type: 'float' })
     precioDeUnidad:number = 0
     @Column()
     unidad:number = 0
-    @Column({ type: 'double' })
+    @Column({ type: 'float' })
     cantidad:number = 0
-    @Column({ type: 'double' })
+    @Column({ type: 'float' })
     precioPorUnidadDeMedida:number = 0
     @Column()
     lote:string = ''
