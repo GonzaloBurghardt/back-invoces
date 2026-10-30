@@ -1,4 +1,5 @@
-import { Entity, PrimaryGeneratedColumn, Column, TableInheritance } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, TableInheritance, OneToMany } from "typeorm"
+import { Transaccion } from "./Transaccion"
 
 @Entity()
 @TableInheritance({ column: { type: "varchar", name: "type" } })
@@ -17,7 +18,8 @@ export class Documento {
     @Column()
     nifEmpresa:string = ''
     @Column()
-    datos:string = '' //Esto en realidad es un tipo Transaccion
-
+    datos:Transaccion = new Transaccion 
+    @OneToMany(() => Transaccion, (transaccion => transaccion.documento))
+    transacciones!:Transaccion[]
 
 }

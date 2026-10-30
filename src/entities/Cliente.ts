@@ -7,6 +7,6 @@ export class Cliente extends AgenteComercial {
 
 
     @OneToMany(() => Local, (local => local.propietario))
-    locales:Local[]
+    locales!:Local[]
 
 }

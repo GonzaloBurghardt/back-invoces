@@ -1,4 +1,4 @@
-export enum unidadDeMedida {
+export enum UnidadDeMedida {
     UNIDAD = "unidad",
     KILOGRAMO = "kilogramo",
     METRO = "metro",

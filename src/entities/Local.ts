@@ -12,6 +12,6 @@ export class Local {
     numero:number = 0
 
     @ManyToOne(() => Cliente, (cliente => cliente.locales))
-    propietario:Cliente
+    propietario!:Cliente
 
 }
