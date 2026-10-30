@@ -1,4 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm"
+import { Producto } from "./Producto"
+import { Almacen } from "./Almacen"
 
 @Entity()
 export class Distribucion {
@@ -10,5 +12,9 @@ export class Distribucion {
     @Column()
     cantidad:number = 0
 
+    @ManyToOne(() => Producto, producto => producto.distribucion)
+    producto!: Producto
+    @ManyToOne(() => Almacen, almacen => almacen.distribucion)
+    almacen!: Producto
 
 }

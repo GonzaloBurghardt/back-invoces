@@ -11,4 +11,6 @@ export class AgenteComercial {
     nombre:string = ''
     @OneToMany(() => Transaccion, transaccion => transaccion.agenteComercial)
     transacciones!: Transaccion[]
+
+    
 }
