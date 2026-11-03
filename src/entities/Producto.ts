@@ -6,7 +6,7 @@ import { Distribucion } from "./Distribucion"
 export class Producto {
 
     @PrimaryGeneratedColumn()
-    id:string = ''
+    id:number = 0
     @Column({type: "float"})
     cantidad:number = 0
     @OneToMany(() => Transaccion, transaccion => transaccion.producto)
